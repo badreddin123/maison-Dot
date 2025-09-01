@@ -1,0 +1,89 @@
+/* ULTRA MODERN DARK THEME - Alternative sombre pour contraste optimal */
+
+/* ================================
+   ULTRA MODERN DARK COLOR PALETTE
+   ================================ */
+
+:root[data-theme="dark"] {
+  /* === GRADIENT DE COULEURS PRINCIPALE MODERNE SOMBRE === */
+  --primary-color: #6366F1;       /* Indigo plus doux pour fond sombre */
+  --secondary-color: #3B82F6;     /* Bleu plus lumineux */
+  --tertiary-color: #06B6D4;      /* Cyan adapté */
+  --accent-color: #10B981;        /* Vert emeraude */
+  
+  /* === GRADIENT BACKGROUNDS MODERNES SOMBRE === */
+  --gradient-primary: linear-gradient(135deg, #6366F1 0%, #3B82F6 50%, #06B6D4 100%);
+  --gradient-secondary: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+  --gradient-tertiary: linear-gradient(135deg, #06B6D4 0%, #10B981 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(59, 130, 246, 0.05) 50%, rgba(6, 182, 212, 0.03) 100%);
+  
+  /* === COULEURS DE BASE ULTRA PROFESSIONNELLES SOMBRE === */
+  --pure-white: #F5F5F5;
+  --snow-white: #F5F5F5;
+  --ultra-light-gray: #F5F5F5;
+  --light-gray: #E2E8F0;
+  --medium-gray: #334155;
+  --soft-gray: #475569;
+  --dark-gray: #1E293B;
+  --charcoal: #0F172A;
+  
+  /* === BACKGROUNDS ULTRA MODERNES SOMBRE === */
+  --bg-main: #0F172A;                    /* Charcoal très foncé */
+  --bg-secondary: #1E293B;               /* Gris foncé secondaire */
+  --bg-tertiary: #334155;                /* Gris moyen */
+  --card-bg: #1E293B;                    /* Cartes gris foncé */
+  --card-bg-hover: #334155;              /* Gris moyen au survol */
+  --glassmorphism-bg: rgba(30, 41, 59, 0.8);
+  --glassmorphism-border: rgba(99, 102, 241, 0.2);
+  
+  /* === BORDERS ULTRA MODERNES SOMBRE === */
+  --border-primary: #334155;
+  --border-hover: var(--primary-color);
+  --border-focus: var(--secondary-color);
+  
+  /* === OMBRES ULTRA SOPHISTIQUÉES SOMBRE === */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-focus: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  --shadow-elevated: 0 12px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glassmorphism: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-neon: 0 0 20px rgba(99, 102, 241, 0.4);
+  
+  /* === TEXTES ULTRA PROFESSIONNELS SOMBRE === */
+  --text-primary: #F8FAFC;              /* Blanc cassé pour lisibilité */
+  --text-secondary: #CBD5E1;            /* Gris clair */
+  --text-muted: #94A3B8;                /* Gris moyen */
+  --text-light: #64748B;                /* Gris plus foncé */
+  --text-white: var(--pure-white);
+  --text-gradient: linear-gradient(135deg, var(--primary-color), var(--tertiary-color));
+  --text-on-primary: var(--pure-white);
+  --text-on-secondary: var(--pure-white);
+  --text-link: var(--primary-color);
+  --text-link-hover: var(--secondary-color);
+}
+
+/* Toggle pour passer du thème clair au sombre */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-elevated);
+  transition: var(--transition-ultra-smooth);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-neon);
+}

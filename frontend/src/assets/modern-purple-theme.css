@@ -1,0 +1,316 @@
+/* MODERN MINIMALISTIC THEME - Palette de couleurs cohérente */
+
+:root {
+  /* === PALETTE DE COULEURS PRINCIPALE === */
+  --primary-color: #4300FF;       /* Violet-bleu principal - Éléments principaux */
+  --secondary-color: #0065F8;     /* Bleu royal - Accents et boutons */
+  --tertiary-color: #00CAFF;      /* Cyan moderne - Éléments secondaires */
+  --accent-color: #00FFDE;        /* Teal moderne - Points d'accent et dots */
+  
+  /* === COULEURS DE BASE === */
+  --pure-white: #FFFFFF;          /* Blanc pur - Textes et contraste */
+  --light-gray: #F5F5F5;          /* Gris très clair - Arrière-plans */
+  --medium-gray: #E2E8F0;         /* Gris moyen - Bordures */
+  --dark-gray: #334155;           /* Gris foncé - Textes secondaires */
+  
+  /* === ALIAS POUR COMPATIBILITÉ === */
+  --modern-blue-1: var(--primary-color);
+  --modern-blue-2: var(--secondary-color);
+  --modern-blue-3: var(--tertiary-color);
+  --modern-teal: var(--accent-color);
+  
+  /* === REMPLACEMENTS DES ANCIENNES COULEURS === */
+  --primary-blue: var(--primary-color);
+  --electric-blue: var(--secondary-color);
+  --neon-pink: var(--tertiary-color);
+  --acid-green: #10B981;
+  
+  /* === COULEURS SOLIDES (DESIGN MINIMALISTIQUE) === */
+  --primary-solid: var(--primary-color);
+  --secondary-solid: var(--secondary-color);
+  --accent-solid: var(--tertiary-color);
+  --highlight-solid: var(--accent-color);
+  --navbar-solid: var(--pure-white);
+  --card-solid: var(--pure-white);
+  --hero-solid: #F5F5F5;
+  
+  /* === BACKGROUNDS === */
+  --bg-white: var(--pure-white);
+  --card-bg: var(--pure-white);
+  --card-bg-hover: #F5F5F5;
+  --card-border: var(--medium-gray);
+  --card-border-hover: var(--tertiary-color);
+  
+  /* === TEXTES === */
+  --text-primary: var(--dark-gray);
+  --text-white: var(--pure-white);
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+  
+  /* === OMBRES AVEC NOUVELLE PALETTE === */
+  --shadow-primary: 0 0 20px rgba(67, 0, 255, 0.4);
+  --shadow-secondary: 0 0 20px rgba(0, 101, 248, 0.4);
+  --shadow-tertiary: 0 0 20px rgba(0, 202, 255, 0.4);
+  --shadow-accent: 0 0 20px rgba(0, 255, 222, 0.4);
+  --shadow-card: 0 4px 16px rgba(67, 0, 255, 0.12);
+  --shadow-hover: 0 8px 24px rgba(0, 101, 248, 0.16);
+  --shadow-premium: 0 16px 32px rgba(67, 0, 255, 0.15);
+  
+  /* === TRANSITIONS === */
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --border-radius-medium: 0.75rem;
+  --border-radius-large: 1.25rem;
+}
+
+/* === CLASSES SPÉCIFIQUES POUR LA NOUVELLE PALETTE === */
+
+/* Backgrounds avec nouvelle palette */
+.modern-purple-bg {
+  background: var(--deep-purple);
+}
+
+.modern-purple-gradient {
+  background: var(--primary-gradient);
+}
+
+.modern-blue-light-bg {
+  background: var(--very-light-blue);
+}
+
+.modern-card-bg {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
+}
+
+.modern-card-bg:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--card-border-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Textes avec nouvelle palette */
+.modern-text-primary {
+  color: var(--primary-color);
+}
+
+.modern-text-secondary {
+  color: var(--secondary-color);
+}
+
+.modern-text-tertiary {
+  color: var(--tertiary-color);
+}
+
+.modern-text-accent {
+  color: var(--accent-color);
+}
+
+/* Compatibilité anciens noms */
+.modern-text-purple {
+  color: var(--primary-color);
+}
+
+.modern-text-bright-purple {
+  color: var(--secondary-color);
+}
+
+.modern-text-light-blue {
+  color: var(--tertiary-color);
+}
+
+.modern-gradient-text {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Boutons avec nouvelle palette */
+.modern-btn-primary {
+  background: var(--primary-color);
+  color: var(--pure-white);
+  border: none;
+  box-shadow: var(--shadow-primary);
+  transition: var(--transition-smooth);
+}
+
+.modern-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-premium);
+  background: var(--secondary-color);
+}
+
+.modern-btn-secondary {
+  background: var(--secondary-color);
+  color: var(--pure-white);
+  border: none;
+  box-shadow: var(--shadow-secondary);
+  transition: var(--transition-smooth);
+}
+
+.modern-btn-secondary:hover {
+  transform: translateY(-3px);
+  background: var(--tertiary-color);
+}
+
+.modern-btn-outline-primary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.modern-btn-outline-primary:hover {
+  background: var(--primary-color);
+  color: var(--pure-white);
+}
+
+/* Compatibilité anciens noms */
+.modern-btn-purple {
+  background: var(--primary-color);
+  color: var(--pure-white);
+  border: none;
+  box-shadow: var(--shadow-primary);
+  transition: var(--transition-smooth);
+}
+
+.modern-btn-purple:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-premium);
+}
+
+.modern-btn-outline-purple {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.modern-btn-outline-purple:hover {
+  background: var(--primary-color);
+  color: var(--pure-white);
+}
+
+/* Effets spéciaux avec nouvelle palette */
+.modern-glow-primary {
+  box-shadow: var(--shadow-primary);
+}
+
+.modern-glow-secondary {
+  box-shadow: var(--shadow-secondary);
+}
+
+.modern-glow-tertiary {
+  box-shadow: var(--shadow-tertiary);
+}
+
+.modern-glow-accent {
+  box-shadow: var(--shadow-accent);
+}
+
+/* Compatibilité anciens noms */
+.modern-glow-purple {
+  box-shadow: var(--shadow-primary);
+}
+
+.modern-glow-blue {
+  box-shadow: var(--shadow-tertiary);
+}
+
+/* Animations avec nouvelle palette */
+@keyframes modern-primary-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(67, 0, 255, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(67, 0, 255, 0.4);
+  }
+}
+
+@keyframes modern-secondary-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(0, 101, 248, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(0, 101, 248, 0.4);
+  }
+}
+
+@keyframes modern-tertiary-float {
+  0%, 100% { 
+    transform: translateY(0px);
+    box-shadow: 0 0 15px rgba(0, 202, 255, 0.3);
+  }
+  50% { 
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0, 202, 255, 0.5);
+  }
+}
+
+@keyframes modern-accent-glow {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(0, 255, 222, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(0, 255, 222, 0.6);
+  }
+}
+
+.modern-animate-primary-pulse {
+  animation: modern-primary-pulse 2s ease-in-out infinite;
+}
+
+.modern-animate-secondary-pulse {
+  animation: modern-secondary-pulse 2s ease-in-out infinite;
+}
+
+.modern-animate-tertiary-float {
+  animation: modern-tertiary-float 3s ease-in-out infinite;
+}
+
+.modern-animate-accent-glow {
+  animation: modern-accent-glow 2s ease-in-out infinite;
+}
+
+/* Compatibilité anciens noms */
+.modern-animate-purple-pulse {
+  animation: modern-primary-pulse 2s ease-in-out infinite;
+}
+
+.modern-animate-blue-float {
+  animation: modern-tertiary-float 3s ease-in-out infinite;
+}
+
+/* Particules avec nouvelle palette */
+.modern-particle-primary {
+  background: var(--primary-color);
+  box-shadow: 0 0 6px var(--primary-color);
+}
+
+.modern-particle-secondary {
+  background: var(--secondary-color);
+  box-shadow: 0 0 6px var(--secondary-color);
+}
+
+.modern-particle-tertiary {
+  background: var(--tertiary-color);
+  box-shadow: 0 0 6px var(--tertiary-color);
+}
+
+.modern-particle-accent {
+  background: var(--accent-color);
+  box-shadow: 0 0 6px var(--accent-color);
+}
+
+/* Compatibilité anciens noms */
+.modern-particle-purple {
+  background: var(--primary-color);
+  box-shadow: 0 0 6px var(--primary-color);
+}
+
+.modern-particle-blue {
+  background: var(--tertiary-color);
+  box-shadow: 0 0 6px var(--tertiary-color);
+}
+
+.modern-particle-light {
+  background: var(--accent-color);
+  box-shadow: 0 0 4px var(--accent-color);
+}

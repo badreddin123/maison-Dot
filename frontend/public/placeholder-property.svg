@@ -1,0 +1,28 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#1F2937"/>
+  
+  <!-- Building outline -->
+  <rect x="50" y="50" width="300" height="200" fill="#374151" stroke="#6B7280" stroke-width="2"/>
+  
+  <!-- Windows -->
+  <rect x="80" y="80" width="40" height="40" fill="#4B5563" stroke="#6B7280"/>
+  <rect x="140" y="80" width="40" height="40" fill="#4B5563" stroke="#6B7280"/>
+  <rect x="200" y="80" width="40" height="40" fill="#4B5563" stroke="#6B7280"/>
+  <rect x="260" y="80" width="40" height="40" fill="#4B5563" stroke="#6B7280"/>
+  
+  <rect x="80" y="140" width="40" height="40" fill="#4B5563" stroke="#6B7280"/>
+  <rect x="140" y="140" width="40" height="40" fill="#4B5563" stroke="#6B7280"/>
+  <rect x="200" y="140" width="40" height="40" fill="#4B5563" stroke="#6B7280"/>
+  <rect x="260" y="140" width="40" height="40" fill="#4B5563" stroke="#6B7280"/>
+  
+  <!-- Door -->
+  <rect x="160" y="190" width="80" height="60" fill="#374151" stroke="#6B7280" stroke-width="2"/>
+  <circle cx="220" cy="220" r="3" fill="#9CA3AF"/>
+  
+  <!-- Roof -->
+  <path d="M40 50L200 20L360 50L350 40L200 10L50 40Z" fill="#6B7280"/>
+  
+  <!-- Text -->
+  <text x="200" y="280" font-family="Arial, sans-serif" font-size="14" fill="#9CA3AF" text-anchor="middle">Propriété</text>
+</svg>

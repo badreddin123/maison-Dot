@@ -1,0 +1,529 @@
+/* PROFESSIONAL WHITE THEME - Design Professionnel Blanc pour Admin Dashboard */
+
+/* ================================
+   VARIABLES GLOBALES THÈME BLANC PROFESSIONNEL
+   ================================ */
+
+:root {
+  /* === PALETTE DE COULEURS PROFESSIONNELLE === */
+  --primary-color: #4300FF;       /* Violet-bleu principal - Éléments principaux */
+  --secondary-color: #0065F8;     /* Bleu royal - Accents et boutons */
+  --tertiary-color: #00CAFF;      /* Cyan moderne - Éléments secondaires */
+  --accent-color: #00FFDE;        /* Teal moderne - Points d'accent */
+  
+  /* === COULEURS DE BASE === */
+  --pure-white: #F5F5F5;          /* Blanc pur - Arrière-plans principaux */
+  --light-gray: #F5F5F5;          /* Gris très clair - Arrière-plans secondaires */
+  --medium-gray: #E2E8F0;         /* Gris moyen - Bordures et séparateurs */
+  --dark-gray: #334155;           /* Gris foncé - Textes principaux */
+  
+  /* === COULEURS D'ACCENTUATION === */
+  --emerald-green: #10B981;       /* Vert émeraude - Indicateurs positifs */
+  --coral-red: #EF4444;           /* Rouge coral - Alertes et erreurs */
+  --golden-yellow: #F59E0B;       /* Jaune doré - Avertissements */
+  --orange-cta: #FF6B35;          /* Orange - Boutons d'action */
+  
+  /* === TEXTES === */
+  --text-primary: #1F2937;        /* Texte principal - très foncé */
+  --text-secondary: #6B7280;      /* Texte secondaire - gris moyen */
+  --text-muted: #9CA3AF;          /* Texte discret - gris clair */
+  --text-white: #FFFFFF;          /* Texte blanc */
+  
+  /* === ARRIÈRE-PLANS === */
+  --bg-primary: var(--pure-white);
+  --bg-secondary: var(--light-gray);
+  --bg-tertiary: #F3F4F6;
+  
+  /* === CARTES ET CONTENEURS === */
+  --card-bg: var(--pure-white);
+  --card-bg-hover: var(--light-gray);
+  --card-border: var(--medium-gray);
+  --card-border-hover: var(--primary-color);
+  
+  /* === OMBRES PROFESSIONNELLES === */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-focus: 0 0 0 3px rgba(67, 0, 255, 0.1);
+  --shadow-primary: 0 4px 12px rgba(67, 0, 255, 0.15);
+  --shadow-secondary: 0 4px 12px rgba(0, 101, 248, 0.15);
+  
+  /* === BORDURES === */
+  --border-radius-small: 0.375rem;   /* 6px */
+  --border-radius-medium: 0.5rem;    /* 8px */
+  --border-radius-large: 0.75rem;    /* 12px */
+  --border-radius-xl: 1rem;          /* 16px */
+  
+  /* === TRANSITIONS === */
+  --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* === ESPACEMENTS === */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+}
+
+/* ================================
+   CLASSES UTILITAIRES PROFESSIONNELLES
+   ================================ */
+
+/* Arrière-plans professionnels */
+.pro-bg-white { background: var(--pure-white); }
+.pro-bg-light { background: var(--light-gray); }
+.pro-bg-card { 
+  background: var(--card-bg); 
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
+}
+
+/* Textes professionnels */
+.pro-text-primary { color: var(--text-primary); }
+.pro-text-secondary { color: var(--text-secondary); }
+.pro-text-muted { color: var(--text-muted); }
+.pro-text-brand { color: var(--primary-color); }
+
+/* Boutons professionnels */
+.pro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-medium);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.pro-btn-primary {
+  background: var(--primary-color);
+  color: var(--text-white);
+  box-shadow: var(--shadow-subtle);
+}
+
+.pro-btn-primary:hover {
+  background: var(--secondary-color);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-primary);
+}
+
+.pro-btn-secondary {
+  background: var(--pure-white);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.pro-btn-secondary:hover {
+  background: var(--primary-color);
+  color: var(--pure-white);
+}
+
+.pro-btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+}
+
+.pro-btn-outline:hover {
+  background: var(--light-gray);
+  border-color: var(--primary-color);
+}
+
+/* Cartes professionnelles */
+.pro-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-large);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+}
+
+.pro-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--card-border-hover);
+}
+
+.pro-card-featured {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-primary);
+}
+
+/* Métriques professionnelles */
+.pro-metric-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-large);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.pro-metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+}
+
+.pro-metric-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(67, 0, 255, 0.1);
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.pro-metric-content {
+  flex: 1;
+}
+
+.pro-metric-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.pro-metric-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pro-metric-trend {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.pro-metric-trend.positive { color: var(--emerald-green); }
+.pro-metric-trend.negative { color: var(--coral-red); }
+
+/* Alertes professionnelles */
+.pro-alert {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-large);
+  padding: var(--spacing-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  box-shadow: var(--shadow-card);
+}
+
+.pro-alert-success {
+  border-color: var(--emerald-green);
+  background: rgba(16, 185, 129, 0.03);
+}
+
+.pro-alert-warning {
+  border-color: var(--golden-yellow);
+  background: rgba(245, 158, 11, 0.03);
+}
+
+.pro-alert-error {
+  border-color: var(--coral-red);
+  background: rgba(239, 68, 68, 0.03);
+}
+
+.pro-alert-info {
+  border-color: var(--secondary-color);
+  background: rgba(0, 101, 248, 0.03);
+}
+
+.pro-alert-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pro-alert-success .pro-alert-icon {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--emerald-green);
+}
+
+.pro-alert-warning .pro-alert-icon {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--golden-yellow);
+}
+
+.pro-alert-error .pro-alert-icon {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--coral-red);
+}
+
+.pro-alert-info .pro-alert-icon {
+  background: rgba(0, 101, 248, 0.1);
+  color: var(--secondary-color);
+}
+
+/* Formulaires professionnels */
+.pro-form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.pro-form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.875rem;
+}
+
+.pro-form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--card-border);
+  border-radius: var(--border-radius-medium);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.pro-form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-focus);
+}
+
+.pro-form-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Tables professionnelles */
+.pro-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border-radius: var(--border-radius-large);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.pro-table th {
+  background: var(--light-gray);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.pro-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-secondary);
+}
+
+.pro-table tr:hover {
+  background: var(--light-gray);
+}
+
+/* Badges professionnels */
+.pro-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-medium);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pro-badge-primary {
+  background: rgba(67, 0, 255, 0.1);
+  color: var(--primary-color);
+  border: 1px solid rgba(67, 0, 255, 0.2);
+}
+
+.pro-badge-success {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--emerald-green);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.pro-badge-warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--golden-yellow);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.pro-badge-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--coral-red);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Navigation professionnelle */
+.pro-nav {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
+}
+
+.pro-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--border-radius-medium);
+  transition: var(--transition-smooth);
+  font-weight: 500;
+}
+
+.pro-nav-link:hover,
+.pro-nav-link.active {
+  background: var(--light-gray);
+  color: var(--primary-color);
+}
+
+.pro-nav-link.active {
+  font-weight: 600;
+  border-left: 3px solid var(--primary-color);
+}
+
+/* Animations professionnelles */
+@keyframes pro-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pro-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pro-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.pro-animate-fade-in {
+  animation: pro-fade-in 0.3s ease-out;
+}
+
+.pro-animate-scale-in {
+  animation: pro-scale-in 0.2s ease-out;
+}
+
+.pro-animate-pulse {
+  animation: pro-pulse 2s ease-in-out infinite;
+}
+
+/* Grilles professionnelles */
+.pro-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.pro-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.pro-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.pro-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.pro-grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pro-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .pro-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .pro-grid-4,
+  .pro-grid-3,
+  .pro-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .pro-metric-card {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-md);
+  }
+  
+  .pro-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Scrollbar professionnel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--medium-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Sélection de texte */
+::selection {
+  background: rgba(67, 0, 255, 0.2);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background: rgba(67, 0, 255, 0.2);
+  color: var(--text-primary);
+}

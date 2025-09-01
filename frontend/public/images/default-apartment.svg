@@ -1,0 +1,93 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildingGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0F8FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E6E6FA;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="400" height="300" fill="url(#skyGradient)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="250" width="400" height="50" fill="#90EE90"/>
+  
+  <!-- Building base -->
+  <rect x="100" y="80" width="200" height="170" fill="url(#buildingGradient)" stroke="#D3D3D3" stroke-width="2"/>
+  
+  <!-- Balconies -->
+  <rect x="90" y="130" width="220" height="8" fill="#C0C0C0" stroke="#A9A9A9" stroke-width="1"/>
+  <rect x="90" y="180" width="220" height="8" fill="#C0C0C0" stroke="#A9A9A9" stroke-width="1"/>
+  
+  <!-- Windows arranged in grid -->
+  <!-- Floor 1 -->
+  <rect x="120" y="100" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="132.5" y1="100" x2="132.5" y2="125" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="120" y1="112.5" x2="145" y2="112.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <rect x="160" y="100" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="172.5" y1="100" x2="172.5" y2="125" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="160" y1="112.5" x2="185" y2="112.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <rect x="200" y="100" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="212.5" y1="100" x2="212.5" y2="125" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="200" y1="112.5" x2="225" y2="112.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <rect x="240" y="100" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="252.5" y1="100" x2="252.5" y2="125" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="240" y1="112.5" x2="265" y2="112.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <!-- Floor 2 -->
+  <rect x="120" y="150" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="132.5" y1="150" x2="132.5" y2="175" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="120" y1="162.5" x2="145" y2="162.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <rect x="160" y="150" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="172.5" y1="150" x2="172.5" y2="175" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="160" y1="162.5" x2="185" y2="162.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <rect x="200" y="150" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="212.5" y1="150" x2="212.5" y2="175" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="200" y1="162.5" x2="225" y2="162.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <rect x="240" y="150" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="252.5" y1="150" x2="252.5" y2="175" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="240" y1="162.5" x2="265" y2="162.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <!-- Floor 3 -->
+  <rect x="120" y="200" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="132.5" y1="200" x2="132.5" y2="225" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="120" y1="212.5" x2="145" y2="212.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <rect x="160" y="200" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="172.5" y1="200" x2="172.5" y2="225" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="160" y1="212.5" x2="185" y2="212.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <rect x="200" y="200" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="212.5" y1="200" x2="212.5" y2="225" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="200" y1="212.5" x2="225" y2="212.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <rect x="240" y="200" width="25" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+  <line x1="252.5" y1="200" x2="252.5" y2="225" stroke="#4682B4" stroke-width="0.5"/>
+  <line x1="240" y1="212.5" x2="265" y2="212.5" stroke="#4682B4" stroke-width="0.5"/>
+  
+  <!-- Entrance -->
+  <rect x="175" y="230" width="50" height="20" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  <rect x="180" y="235" width="40" height="15" fill="#654321"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="350" cy="50" r="15" fill="#FFD700" opacity="0.8"/>
+  <path d="M340,60 Q350,45 360,60" stroke="#FFD700" stroke-width="2" fill="none"/>
+  
+  <!-- Small urban trees -->
+  <ellipse cx="50" cy="230" rx="15" ry="20" fill="#228B22"/>
+  <rect x="47" y="235" width="6" height="15" fill="#8B4513"/>
+  
+  <ellipse cx="350" cy="225" rx="12" ry="18" fill="#32CD32"/>
+  <rect x="347" y="230" width="6" height="15" fill="#8B4513"/>
+</svg>

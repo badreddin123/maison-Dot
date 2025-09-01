@@ -1,0 +1,985 @@
+/* INTELLIGENT PROFESSIONAL THEME - Thème Professionnel Intelligent avec Adaptation Automatique */
+
+/* ================================
+   VARIABLES GLOBALES INTELLIGENT THEME
+   ================================ */
+
+:root {
+  /* === PALETTE DE COULEURS PRINCIPALES === */
+  --primary-color: #4300FF;       /* Violet-bleu principal - Éléments principaux */
+  --secondary-color: #0065F8;     /* Bleu royal - Accents et boutons */
+  --tertiary-color: #00CAFF;      /* Cyan moderne - Éléments secondaires */
+  --accent-color: #00FFDE;        /* Teal moderne - Points d'accent */
+  --dark-color: #000000;          /* Noir pour contraste */
+  
+  /* === COULEURS DE BASE SOMBRES === */
+  --pure-black: #000000;          /* Noir pur - Arrière-plans principaux */
+  --dark-black: #0A0A0A;          /* Noir très foncé - Arrière-plans secondaires */
+  --charcoal-black: #1A1A1A;      /* Noir charbon - Cartes et conteneurs */
+  --soft-black: #2A2A2A;          /* Noir doux - Éléments interactifs */
+  --light-black: #3A3A3A;         /* Noir clair - Bordures et séparateurs */
+  --gray-black: #4A4A4A;          /* Gris-noir - Textes secondaires */
+  
+  /* === COULEURS BLANCHES POUR CONTRASTE === */
+  --pure-white: #F5F5F5;          /* Blanc pur pour cartes et champs */
+  --light-white: #FAFAFA;         /* Blanc léger pour variantes */
+  --gray-white: #F5F5F5;          /* Blanc grisé pour hover */
+  
+  /* === SYSTÈME INTELLIGENT DE TEXTES === */
+  --text-on-dark: #FFFFFF;        /* Texte blanc sur fond sombre */
+  --text-on-light: var(--dark-color); /* Texte noir sur fond clair */
+  --text-brand-on-dark: var(--primary-color); /* Couleur brand sur fond sombre */
+  --text-brand-on-light: var(--primary-color); /* Couleur brand sur fond clair */
+  
+  /* === TEXTES CONTEXTUELS === */
+  --text-primary: var(--text-on-dark);     /* Texte principal adaptatif */
+  --text-secondary: #E5E5E5;               /* Texte secondaire */
+  --text-muted: #999999;                   /* Texte discret */
+  --text-white: #FFFFFF;                   /* Texte blanc fixe */
+  --text-dark: var(--dark-color);          /* Texte noir fixe */
+  
+  /* === BACKGROUNDS INTELLIGENTS === */
+  --bg-main: var(--pure-black);
+  --bg-secondary: var(--dark-black);
+  --bg-tertiary: var(--charcoal-black);
+  
+  /* === CARTES ET CHAMPS INTELLIGENTS === */
+  --card-bg-dark: var(--charcoal-black);       /* Carte sur fond sombre */
+  --card-bg-light: var(--pure-white);          /* Carte blanche sur fond sombre */
+  --card-bg-hover-dark: var(--soft-black);     /* Hover carte sombre */
+  --card-bg-hover-light: var(--gray-white);    /* Hover carte blanche */
+  
+  /* === CHAMPS DE FORMULAIRE INTELLIGENTS === */
+  --field-bg-dark: var(--charcoal-black);      /* Champ sur fond sombre */
+  --field-bg-light: var(--pure-white);         /* Champ blanc */
+  --field-bg-brand: var(--primary-color);      /* Champ avec couleur brand */
+  --field-bg-secondary: var(--secondary-color); /* Champ avec couleur secondaire */
+  --field-bg-tertiary: var(--tertiary-color);  /* Champ avec couleur tertiaire */
+  --field-bg-accent: var(--accent-color);      /* Champ avec couleur accent */
+  
+  /* === SYSTÈME DE SÉLECTION AUTOMATIQUE === */
+  --card-bg: var(--card-bg-light);             /* Cartes blanches par défaut */
+  --card-bg-hover: var(--card-bg-hover-light);
+  --card-text: var(--text-on-light);           /* Texte noir sur carte blanche */
+  --card-text-brand: var(--text-brand-on-light); /* Couleurs brand sur carte blanche */
+  
+  /* === NAVBAR ET SIDEBAR === */
+  --navbar-bg: var(--dark-black);
+  --sidebar-bg: var(--charcoal-black);
+  
+  /* === BORDURES INTELLIGENTES === */
+  --border-color: var(--light-black);
+  --border-color-hover: var(--primary-color);
+  --card-border-dark: var(--light-black);
+  --card-border-light: #E5E5E5;
+  --card-border: var(--card-border-light);     /* Bordures claires pour cartes blanches */
+  --card-border-hover: var(--primary-color);
+  
+  /* === COULEURS FONCTIONNELLES === */
+  --emerald-green: #10B981;       /* Vert émeraude - Succès */
+  --coral-red: #EF4444;           /* Rouge coral - Erreurs */
+  --golden-yellow: #F59E0B;       /* Jaune doré - Avertissements */
+  --modern-orange: #FF6B35;       /* Orange moderne - Boutons CTA */
+  
+  /* === OMBRES SOMBRES === */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-focus: 0 0 0 3px rgba(67, 0, 255, 0.3);
+  --shadow-elevated: 0 12px 28px rgba(0, 0, 0, 0.6);
+  --shadow-neon-blue: 0 0 20px rgba(0, 202, 255, 0.6);
+  --shadow-neon-purple: 0 0 20px rgba(67, 0, 255, 0.6);
+  --shadow-neon-green: 0 0 20px rgba(0, 255, 222, 0.4);
+  
+  /* === BACKGROUNDS AVEC OPACITÉ === */
+  --glass-bg-light: rgba(255, 255, 255, 0.05);
+  --glass-bg-medium: rgba(255, 255, 255, 0.10);
+  --glass-bg-strong: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  
+  /* === TRANSITIONS === */
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* === BORDURES === */
+  --border-radius-small: 0.5rem;
+  --border-radius-medium: 0.75rem;
+  --border-radius-large: 1rem;
+  --border-radius-xl: 1.5rem;
+  
+  /* === SPACING === */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+}
+
+/* ================================
+   CLASSES DE BASE INTELLIGENT THEME
+   ================================ */
+
+/* Layout intelligent */
+.intelligent-layout {
+  min-height: 100vh;
+  background: var(--bg-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* ================================
+   SYSTÈME DE CARTES INTELLIGENTES
+   ================================ */
+
+/* Cartes blanches avec texte adaptatif */
+.intelligent-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  color: var(--card-text);
+}
+
+.intelligent-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--card-border-hover);
+  background: var(--card-bg-hover);
+}
+
+.intelligent-card-featured {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-neon-purple);
+}
+
+/* Cartes avec couleurs brand */
+.intelligent-card-primary {
+  background: var(--primary-color);
+  color: var(--text-white);
+  border-color: var(--primary-color);
+}
+
+.intelligent-card-secondary {
+  background: var(--secondary-color);
+  color: var(--text-white);
+  border-color: var(--secondary-color);
+}
+
+.intelligent-card-tertiary {
+  background: var(--tertiary-color);
+  color: var(--text-dark);
+  border-color: var(--tertiary-color);
+}
+
+.intelligent-card-accent {
+  background: var(--accent-color);
+  color: var(--text-dark);
+  border-color: var(--accent-color);
+}
+
+/* ================================
+   SYSTÈME DE CHAMPS INTELLIGENTS
+   ================================ */
+
+/* Champs blancs avec texte adaptatif */
+.intelligent-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--card-border);
+  border-radius: var(--border-radius-medium);
+  background: var(--card-bg);
+  color: var(--card-text);
+  font-size: 0.875rem;
+  transition: var(--transition-smooth);
+}
+
+.intelligent-field:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-focus);
+  background: var(--card-bg-hover);
+}
+
+.intelligent-field::placeholder {
+  color: #999999;
+}
+
+/* Champs avec couleurs brand */
+.intelligent-field-primary {
+  background: var(--primary-color);
+  color: var(--text-white);
+  border-color: var(--primary-color);
+}
+
+.intelligent-field-primary::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.intelligent-field-secondary {
+  background: var(--secondary-color);
+  color: var(--text-white);
+  border-color: var(--secondary-color);
+}
+
+.intelligent-field-secondary::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.intelligent-field-tertiary {
+  background: var(--tertiary-color);
+  color: var(--text-dark);
+  border-color: var(--tertiary-color);
+}
+
+.intelligent-field-tertiary::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.intelligent-field-accent {
+  background: var(--accent-color);
+  color: var(--text-dark);
+  border-color: var(--accent-color);
+}
+
+.intelligent-field-accent::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Header intelligent */
+.intelligent-header {
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  color: var(--text-primary);
+}
+
+/* Sidebar intelligent */
+.intelligent-sidebar {
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+  color: var(--text-primary);
+}
+
+/* ================================
+   SYSTÈME DE BOUTONS INTELLIGENTS
+   ================================ */
+
+/* Boutons avec adaptation automatique */
+.intelligent-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-medium);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.intelligent-btn-primary {
+  background: var(--primary-color);
+  color: var(--text-white);
+  box-shadow: 0 2px 8px rgba(67, 0, 255, 0.4);
+}
+
+.intelligent-btn-primary:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon-purple);
+}
+
+.intelligent-btn-secondary {
+  background: var(--secondary-color);
+  color: var(--text-white);
+  box-shadow: 0 2px 8px rgba(0, 101, 248, 0.4);
+}
+
+.intelligent-btn-secondary:hover {
+  background: var(--tertiary-color);
+  color: var(--text-dark);
+  transform: translateY(-2px);
+}
+
+.intelligent-btn-tertiary {
+  background: var(--tertiary-color);
+  color: var(--text-dark);
+  box-shadow: 0 2px 8px rgba(0, 202, 255, 0.4);
+}
+
+.intelligent-btn-tertiary:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.intelligent-btn-accent {
+  background: var(--accent-color);
+  color: var(--text-dark);
+  box-shadow: 0 2px 8px rgba(0, 255, 222, 0.4);
+}
+
+.intelligent-btn-accent:hover {
+  background: var(--primary-color);
+  color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+/* Boutons outline intelligents */
+.intelligent-btn-outline {
+  background: var(--card-bg);
+  color: var(--card-text);
+  border: 2px solid var(--card-border);
+}
+
+.intelligent-btn-outline:hover {
+  background: var(--primary-color);
+  color: var(--text-white);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.intelligent-btn-outline-primary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.intelligent-btn-outline-primary:hover {
+  background: var(--primary-color);
+  color: var(--text-white);
+}
+
+.intelligent-btn-outline-secondary {
+  background: transparent;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+.intelligent-btn-outline-secondary:hover {
+  background: var(--secondary-color);
+  color: var(--text-white);
+}
+
+/* ================================
+   SYSTÈME DE NAVIGATION INTELLIGENT
+   ================================ */
+
+.intelligent-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--border-radius-medium);
+  transition: var(--transition-smooth);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.intelligent-nav-link:hover,
+.intelligent-nav-link.active {
+  background: var(--glass-bg-medium);
+  color: var(--primary-color);
+  transform: translateX(4px);
+}
+
+.intelligent-nav-link.active {
+  background: rgba(67, 0, 255, 0.15);
+  border-left: 3px solid var(--primary-color);
+  margin-left: -1rem;
+  padding-left: calc(1rem - 3px);
+  box-shadow: var(--shadow-neon-purple);
+}
+
+/* ================================
+   SYSTÈME DE LABELS INTELLIGENTS
+   ================================ */
+
+.intelligent-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.intelligent-label-on-card {
+  color: var(--card-text);
+}
+
+.intelligent-label-brand {
+  color: var(--primary-color);
+}
+
+/* ================================
+   SYSTÈME DE BADGES INTELLIGENTS
+   ================================ */
+
+.intelligent-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-small);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.intelligent-badge-primary {
+  background: rgba(67, 0, 255, 0.2);
+  color: var(--primary-color);
+  border: 1px solid rgba(67, 0, 255, 0.3);
+}
+
+.intelligent-badge-secondary {
+  background: rgba(0, 101, 248, 0.2);
+  color: var(--secondary-color);
+  border: 1px solid rgba(0, 101, 248, 0.3);
+}
+
+.intelligent-badge-tertiary {
+  background: rgba(0, 202, 255, 0.2);
+  color: var(--tertiary-color);
+  border: 1px solid rgba(0, 202, 255, 0.3);
+}
+
+.intelligent-badge-accent {
+  background: rgba(0, 255, 222, 0.2);
+  color: var(--accent-color);
+  border: 1px solid rgba(0, 255, 222, 0.3);
+}
+
+.intelligent-badge-success {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--emerald-green);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.intelligent-badge-warning {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--golden-yellow);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.intelligent-badge-error {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--coral-red);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* ================================
+   SYSTÈME DE TABLEAUX INTELLIGENTS
+   ================================ */
+
+.intelligent-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border-radius: var(--border-radius-large);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.intelligent-table th {
+  background: var(--soft-black);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.intelligent-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--card-text);
+}
+
+.intelligent-table tr:hover {
+  background: var(--card-bg-hover);
+}
+
+/* ================================
+   SYSTÈME D'ALERTES INTELLIGENTES
+   ================================ */
+
+.intelligent-alert {
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius-medium);
+  border-left: 4px solid;
+  margin: 1rem 0;
+  background: var(--card-bg);
+  color: var(--card-text);
+}
+
+.intelligent-alert-primary {
+  border-color: var(--primary-color);
+  background: rgba(67, 0, 255, 0.05);
+}
+
+.intelligent-alert-secondary {
+  border-color: var(--secondary-color);
+  background: rgba(0, 101, 248, 0.05);
+}
+
+.intelligent-alert-tertiary {
+  border-color: var(--tertiary-color);
+  background: rgba(0, 202, 255, 0.05);
+}
+
+.intelligent-alert-accent {
+  border-color: var(--accent-color);
+  background: rgba(0, 255, 222, 0.05);
+}
+
+.intelligent-alert-success {
+  border-color: var(--emerald-green);
+  background: rgba(16, 185, 129, 0.05);
+  color: var(--emerald-green);
+}
+
+.intelligent-alert-warning {
+  border-color: var(--golden-yellow);
+  background: rgba(245, 158, 11, 0.05);
+  color: var(--golden-yellow);
+}
+
+.intelligent-alert-error {
+  border-color: var(--coral-red);
+  background: rgba(239, 68, 68, 0.05);
+  color: var(--coral-red);
+}
+
+/* ================================
+   SYSTÈME DE MÉTRIQUES INTELLIGENTES
+   ================================ */
+
+.intelligent-metric-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-large);
+  padding: 2rem;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  color: var(--card-text);
+}
+
+.intelligent-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-color);
+  background: var(--card-bg-hover);
+}
+
+.intelligent-metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+}
+
+.intelligent-metric-card-primary::before {
+  background: var(--primary-color);
+}
+
+.intelligent-metric-card-secondary::before {
+  background: var(--secondary-color);
+}
+
+.intelligent-metric-card-tertiary::before {
+  background: var(--tertiary-color);
+}
+
+.intelligent-metric-card-accent::before {
+  background: var(--accent-color);
+}
+
+.intelligent-metric-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(67, 0, 255, 0.1);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.intelligent-metric-icon-primary {
+  background: rgba(67, 0, 255, 0.1);
+  color: var(--primary-color);
+}
+
+.intelligent-metric-icon-secondary {
+  background: rgba(0, 101, 248, 0.1);
+  color: var(--secondary-color);
+}
+
+.intelligent-metric-icon-tertiary {
+  background: rgba(0, 202, 255, 0.1);
+  color: var(--tertiary-color);
+}
+
+.intelligent-metric-icon-accent {
+  background: rgba(0, 255, 222, 0.1);
+  color: var(--accent-color);
+}
+
+.intelligent-metric-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--card-text);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.intelligent-metric-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* ================================
+   UTILITAIRES INTELLIGENTS
+   ================================ */
+
+.intelligent-text-center { text-align: center; }
+.intelligent-text-left { text-align: left; }
+.intelligent-text-right { text-align: right; }
+
+/* Textes adaptatifs */
+.intelligent-text-primary { color: var(--text-primary); }
+.intelligent-text-secondary { color: var(--text-secondary); }
+.intelligent-text-muted { color: var(--text-muted); }
+.intelligent-text-on-card { color: var(--card-text); }
+
+/* Couleurs de marque */
+.intelligent-text-brand-primary { color: var(--primary-color); }
+.intelligent-text-brand-secondary { color: var(--secondary-color); }
+.intelligent-text-brand-tertiary { color: var(--tertiary-color); }
+.intelligent-text-brand-accent { color: var(--accent-color); }
+
+/* Backgrounds intelligents */
+.intelligent-bg-primary { background: var(--primary-color); color: var(--text-white); }
+.intelligent-bg-secondary { background: var(--secondary-color); color: var(--text-white); }
+.intelligent-bg-tertiary { background: var(--tertiary-color); color: var(--text-dark); }
+.intelligent-bg-accent { background: var(--accent-color); color: var(--text-dark); }
+.intelligent-bg-card { background: var(--card-bg); color: var(--card-text); }
+.intelligent-bg-main { background: var(--bg-main); color: var(--text-primary); }
+
+/* ================================
+   SYSTÈME DE MODES ALTERNATIFS
+   ================================ */
+
+/* Mode cartes sombres */
+.intelligent-dark-cards {
+  --card-bg: var(--card-bg-dark);
+  --card-bg-hover: var(--card-bg-hover-dark);
+  --card-text: var(--text-on-dark);
+  --card-border: var(--card-border-dark);
+}
+
+/* Mode champs colorés */
+.intelligent-colored-fields .intelligent-field {
+  background: var(--primary-color);
+  color: var(--text-white);
+  border-color: var(--primary-color);
+}
+
+.intelligent-colored-fields .intelligent-field::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Mode alternance de couleurs */
+.intelligent-field-rotation .intelligent-field:nth-child(4n+1) {
+  background: var(--primary-color);
+  color: var(--text-white);
+  border-color: var(--primary-color);
+}
+
+.intelligent-field-rotation .intelligent-field:nth-child(4n+2) {
+  background: var(--secondary-color);
+  color: var(--text-white);
+  border-color: var(--secondary-color);
+}
+
+.intelligent-field-rotation .intelligent-field:nth-child(4n+3) {
+  background: var(--tertiary-color);
+  color: var(--text-dark);
+  border-color: var(--tertiary-color);
+}
+
+.intelligent-field-rotation .intelligent-field:nth-child(4n+4) {
+  background: var(--accent-color);
+  color: var(--text-dark);
+  border-color: var(--accent-color);
+}
+
+/* ================================
+   RESPONSIVE INTELLIGENT
+   ================================ */
+
+@media (max-width: 1024px) {
+  .intelligent-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+  
+  .intelligent-card {
+    margin-bottom: 1rem;
+  }
+  
+  .intelligent-metric-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .intelligent-layout {
+    padding: 1rem;
+  }
+  
+  .intelligent-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .intelligent-card {
+    padding: 1rem;
+  }
+  
+  .intelligent-field {
+    font-size: 1rem;
+  }
+  
+  .intelligent-table {
+    font-size: 0.875rem;
+  }
+  
+  .intelligent-table th,
+  .intelligent-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+/* ================================
+   SCROLLBAR INTELLIGENT
+   ================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* ================================
+   SÉLECTION INTELLIGENTE
+   ================================ */
+
+::selection {
+  background: rgba(67, 0, 255, 0.3);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background: rgba(67, 0, 255, 0.3);
+  color: var(--text-primary);
+}
+
+/* ================================
+   FOCUS INTELLIGENT
+   ================================ */
+
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ================================
+   COMPATIBILITÉ LEGACY (Maintient les anciennes classes pour compatibilité)
+   ================================ */
+
+/* Alias pour compatibilité dark-theme */
+.dark-layout {
+  min-height: 100vh;
+  background: var(--bg-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.dark-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  color: var(--card-text);
+}
+
+.dark-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-medium);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.dark-btn-primary {
+  background: var(--primary-color);
+  color: var(--text-white);
+  box-shadow: 0 2px 8px rgba(67, 0, 255, 0.4);
+}
+
+.dark-btn-secondary {
+  background: var(--secondary-color);
+  color: var(--text-white);
+  box-shadow: 0 2px 8px rgba(0, 101, 248, 0.4);
+}
+
+.dark-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--card-border);
+  border-radius: var(--border-radius-medium);
+  background: var(--card-bg);
+  color: var(--card-text);
+  font-size: 0.875rem;
+  transition: var(--transition-smooth);
+}
+
+.dark-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.dark-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--border-radius-medium);
+  transition: var(--transition-smooth);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.dark-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border-radius: var(--border-radius-large);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.dark-alert {
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius-medium);
+  border-left: 4px solid;
+  margin: 1rem 0;
+  background: var(--card-bg);
+  color: var(--card-text);
+}
+
+.dark-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-small);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Classes utilitaires rapides */
+.card-white { 
+  background: var(--pure-white) !important; 
+  color: var(--text-dark) !important; 
+  border-color: #E5E5E5 !important;
+}
+
+.card-primary { 
+  background: var(--primary-color) !important; 
+  color: var(--text-white) !important; 
+  border-color: var(--primary-color) !important;
+}
+
+.card-secondary { 
+  background: var(--secondary-color) !important; 
+  color: var(--text-white) !important; 
+  border-color: var(--secondary-color) !important;
+}
+
+.card-tertiary { 
+  background: var(--tertiary-color) !important; 
+  color: var(--text-dark) !important; 
+  border-color: var(--tertiary-color) !important;
+}
+
+.card-accent { 
+  background: var(--accent-color) !important; 
+  color: var(--text-dark) !important; 
+  border-color: var(--accent-color) !important;
+}
+
+/* Classes de texte forcées */
+.text-white { color: var(--text-white) !important; }
+.text-dark { color: var(--text-dark) !important; }
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-tertiary { color: var(--tertiary-color) !important; }
+.text-accent { color: var(--accent-color) !important; }

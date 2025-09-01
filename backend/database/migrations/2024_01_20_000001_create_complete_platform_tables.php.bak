@@ -1,0 +1,167 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        // Mettre à jour la table users si elle existe déjà
+        if (Schema::hasTable('users')) {
+            Schema::table('users', function (Blueprint $table) {
+                if (!Schema::hasColumn('users', 'role')) {
+                    $table->enum('role', ['client', 'manager', 'admin'])->default('client')->after('password');
+                }
+                if (!Schema::hasColumn('users', 'status')) {
+                    $table->enum('status', ['pending', 'active', 'suspended'])->default('active')->after('role');
+                }
+                if (!Schema::hasColumn('users', 'phone')) {
+                    $table->string('phone', 20)->nullable()->after('status');
+                }
+                if (!Schema::hasColumn('users', 'address')) {
+                    $table->text('address')->nullable()->after('phone');
+                }
+                if (!Schema::hasColumn('users', 'profile_picture')) {
+                    $table->string('profile_picture')->nullable()->after('address');
+                }
+            });
+        }
+
+        // Créer la table properties
+        Schema::create('properties', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('manager_id')->constrained('users')->onDelete('cascade');
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->enum('type', ['house', 'apartment', 'office']);
+            $table->decimal('price_per_night', 10, 2);
+            $table->text('address');
+            $table->decimal('latitude', 10, 8)->nullable();
+            $table->decimal('longitude', 11, 8)->nullable();
+            $table->integer('bedrooms')->default(1);
+            $table->integer('bathrooms')->default(1);
+            $table->decimal('area', 8, 2)->nullable()->comment('Surface en m²');
+            $table->integer('guests')->default(2);
+            $table->json('amenities')->nullable()->comment('Équipements');
+            $table->json('images')->nullable()->comment('URLs des images');
+            $table->enum('status', ['available', 'occupied', 'maintenance'])->default('available');
+            $table->decimal('rating', 3, 2)->nullable()->comment('Note moyenne (0-5)');
+            $table->integer('reviews_count')->default(0);
+            $table->boolean('featured')->default(false);
+            $table->timestamps();
+
+            $table->index(['type', 'status']);
+            $table->index('price_per_night');
+            $table->index('featured');
+            $table->index(['latitude', 'longitude']);
+        });
+
+        // Créer la table bookings
+        Schema::create('bookings', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('property_id')->constrained()->onDelete('cascade');
+            $table->foreignId('client_id')->constrained('users')->onDelete('cascade');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->decimal('total_price', 10, 2);
+            $table->integer('guests')->default(2);
+            $table->enum('status', ['pending', 'confirmed', 'completed', 'cancelled'])->default('pending');
+            $table->text('special_requests')->nullable();
+            $table->text('cancellation_reason')->nullable();
+            $table->timestamps();
+
+            $table->index(['property_id', 'start_date', 'end_date']);
+            $table->index('status');
+        });
+
+        // Créer la table invoices
+        Schema::create('invoices', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('booking_id')->constrained()->onDelete('cascade');
+            $table->string('invoice_number', 50)->unique();
+            $table->decimal('amount', 10, 2);
+            $table->decimal('tax_amount', 10, 2)->default(0);
+            $table->decimal('total_amount', 10, 2);
+            $table->enum('status', ['pending', 'paid', 'overdue', 'cancelled'])->default('pending');
+            $table->date('due_date');
+            $table->timestamp('paid_at')->nullable();
+            $table->string('payment_method', 50)->nullable();
+            $table->string('payment_reference', 100)->nullable();
+            $table->timestamps();
+
+            $table->index('status');
+            $table->index('due_date');
+        });
+
+        // Créer la table reviews
+        Schema::create('reviews', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('booking_id')->unique()->constrained()->onDelete('cascade');
+            $table->foreignId('property_id')->constrained()->onDelete('cascade');
+            $table->foreignId('client_id')->constrained('users')->onDelete('cascade');
+            $table->integer('rating')->check('rating >= 1 AND rating <= 5');
+            $table->text('comment')->nullable();
+            $table->text('response')->nullable()->comment('Réponse du manager');
+            $table->timestamp('response_at')->nullable();
+            $table->timestamps();
+
+            $table->index('rating');
+        });
+
+        // Créer la table notifications
+        Schema::create('notifications', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('type', 100);
+            $table->string('title');
+            $table->text('message');
+            $table->json('data')->nullable()->comment('Données supplémentaires');
+            $table->timestamp('read_at')->nullable();
+            $table->timestamps();
+
+            $table->index('type');
+            $table->index('read_at');
+        });
+
+        // Créer la table activity_logs
+        Schema::create('activity_logs', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
+            $table->string('action', 100);
+            $table->string('resource_type', 100)->nullable();
+            $table->unsignedBigInteger('resource_id')->nullable();
+            $table->text('description');
+            $table->string('ip_address', 45)->nullable();
+            $table->text('user_agent')->nullable();
+            $table->timestamp('created_at')->nullable();
+
+            $table->index('action');
+            $table->index(['resource_type', 'resource_id']);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('activity_logs');
+        Schema::dropIfExists('notifications');
+        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('invoices');
+        Schema::dropIfExists('bookings');
+        Schema::dropIfExists('properties');
+
+        // Supprimer les colonnes ajoutées à users
+        if (Schema::hasTable('users')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->dropColumn(['role', 'status', 'phone', 'address', 'profile_picture']);
+            });
+        }
+    }
+};

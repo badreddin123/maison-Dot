@@ -1,0 +1,515 @@
+/* Variables CSS pour Karya - Nouvelle palette minimalistique */
+:root {
+  --primary-color: #4300FF;
+  --primary-dark: #0065F8;
+  --secondary-color: #00CAFF;
+  --accent-color: #00FFDE;
+  --text-dark: #334155;
+  --text-gray: #6b7280;
+  --text-light: #9ca3af;
+  --bg-white: #ffffff;
+  --bg-light: #F5F5F5;
+  --shadow-sm: 0 1px 2px 0 rgba(67, 0, 255, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(67, 0, 255, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(67, 0, 255, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(67, 0, 255, 0.1);
+}
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: #F5F5F5;
+}
+
+/* Navigation Bar - Design minimalistique */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--bg-white);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(67, 0, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideDown 0.8s ease-out;
+}
+
+.navbar.scrolled {
+  background: var(--bg-white);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: rgba(67, 0, 255, 0.2);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+
+/* Logo et Brand */
+.nav-brand {
+  flex-shrink: 0;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.brand-link:hover {
+  transform: translateY(-2px);
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  filter: drop-shadow(2px 2px 4px rgba(67, 0, 255, 0.2));
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+.brand-text {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: -0.025em;
+  position: relative;
+}
+
+/* Dot moderne pour Karya */
+.brand-text::after {
+  content: '';
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-color);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { 
+    transform: translateY(-50%) scale(1);
+    box-shadow: 0 0 10px var(--accent-color);
+  }
+  50% { 
+    transform: translateY(-50%) scale(1.2);
+    box-shadow: 0 0 20px var(--accent-color);
+  }
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: var(--text-gray);
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(67, 0, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-link:hover::before {
+  left: 100%;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  background: rgba(67, 0, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.nav-link.router-link-exact-active {
+  color: var(--primary-color);
+  background: rgba(67, 0, 255, 0.1);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+  transform: scale(1.2);
+}
+
+/* Auth Buttons */
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.auth-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.auth-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.auth-btn:hover::before {
+  left: 100%;
+}
+
+.login-btn {
+  color: var(--primary-color);
+  background: transparent;
+  border: 2px solid var(--primary-color);
+}
+
+.login-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.register-btn {
+  background: var(--primary-color);
+  color: white;
+  border: 2px solid var(--primary-color);
+}
+
+.register-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.auth-btn:hover .btn-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Main Content */
+.main-content {
+  margin-top: 80px; /* Espace pour la navbar fixe */
+  min-height: calc(100vh - 80px);
+  position: relative;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main-content {
+  animation: fadeIn 1s ease-out 0.2s both;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 1rem 1.5rem;
+  }
+  
+  .nav-menu {
+    gap: 1.5rem;
+  }
+  
+  .brand-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .nav-menu {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .auth-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .main-content {
+    margin-top: 140px; /* Plus d'espace pour la navbar plus haute */
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-container {
+    padding: 1rem;
+  }
+  
+  .brand-text {
+    font-size: 1.3rem;
+  }
+  
+  .logo-icon {
+    font-size: 2rem;
+  }
+  
+  .nav-menu {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .nav-auth {
+    gap: 0.5rem;
+  }
+  
+  .auth-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-auth {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .auth-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .main-content {
+    margin-top: 200px; /* Encore plus d'espace pour mobile */
+  }
+}
+
+/* Effet de transition pour le changement de page avec dot moderne */
+.router-link-exact-active {
+  position: relative;
+}
+
+.router-link-exact-active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-color);
+  animation: expandDot 0.3s ease-out;
+}
+
+@keyframes expandDot {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    width: 6px;
+    height: 6px;
+    opacity: 1;
+  }
+}
+
+/* Amélioration de l'accessibilité */
+.nav-link:focus,
+.auth-btn:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Effet de glow subtil */
+.navbar {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolled {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3), var(--shadow-lg);
+}
+
+/* Styles globaux pour assurer l'affichage */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Amélioration pour très petits écrans */
+@media (max-width: 360px) {
+  .brand-text {
+    font-size: 1.1rem;
+  }
+  
+  .logo-icon {
+    font-size: 1.8rem;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .auth-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .main-content {
+    margin-top: 220px;
+  }
+}
+
+/* Fix pour les interfaces qui ne s'affichent pas */
+.main-content {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Assurer que les vues enfants s'affichent correctement */
+.main-content > * {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix pour les contenus débordants */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Amélioration pour tablettes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav-container {
+    gap: 1.5rem;
+  }
+  
+  .nav-menu {
+    gap: 1.5rem;
+  }
+  
+  .main-content {
+    margin-top: 90px;
+  }
+}

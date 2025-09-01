@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration Thème Intelligent Professionnel</title>
+    <link rel="stylesheet" href="dark-theme.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 2rem;
+            background: var(--bg-main);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            margin-bottom: 3rem;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .demo-form {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="intelligent-layout">
+    <div class="demo-container">
+        <header style="text-align: center; margin-bottom: 3rem;">
+            <h1 class="intelligent-text-brand-primary" style="font-size: 3rem; margin-bottom: 1rem;">
+                Système Intelligent Professionnel
+            </h1>
+            <p class="intelligent-text-secondary" style="font-size: 1.2rem;">
+                Adaptation automatique des couleurs selon le contexte
+            </p>
+        </header>
+
+        <!-- Section: Cartes Intelligentes -->
+        <section class="demo-section">
+            <h2 class="intelligent-text-brand-primary" style="margin-bottom: 2rem;">Cartes Intelligentes</h2>
+            
+            <div class="demo-grid">
+                <!-- Carte Blanche (par défaut) -->
+                <div class="intelligent-card" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Carte Blanche</h3>
+                    <p>Texte automatiquement en noir sur fond blanc.</p>
+                    <p class="intelligent-text-brand-primary">Couleurs brand visibles</p>
+                    <button class="intelligent-btn-primary" style="margin-top: 1rem;">Action Primaire</button>
+                </div>
+
+                <!-- Carte Primaire -->
+                <div class="intelligent-card-primary" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Carte Primaire (#4300FF)</h3>
+                    <p>Texte automatiquement en blanc sur fond violet.</p>
+                    <button class="intelligent-btn-secondary" style="margin-top: 1rem;">Action Secondaire</button>
+                </div>
+
+                <!-- Carte Secondaire -->
+                <div class="intelligent-card-secondary" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Carte Secondaire (#0065F8)</h3>
+                    <p>Texte automatiquement en blanc sur fond bleu.</p>
+                    <button class="intelligent-btn-tertiary" style="margin-top: 1rem;">Action Tertiaire</button>
+                </div>
+
+                <!-- Carte Tertiaire -->
+                <div class="intelligent-card-tertiary" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Carte Tertiaire (#00CAFF)</h3>
+                    <p>Texte automatiquement en noir sur fond cyan.</p>
+                    <button class="intelligent-btn-accent" style="margin-top: 1rem;">Action Accent</button>
+                </div>
+
+                <!-- Carte Accent -->
+                <div class="intelligent-card-accent" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Carte Accent (#00FFDE)</h3>
+                    <p>Texte automatiquement en noir sur fond teal.</p>
+                    <button class="intelligent-btn-primary" style="margin-top: 1rem;">Action Retour</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Champs Intelligents -->
+        <section class="demo-section">
+            <h2 class="intelligent-text-brand-secondary" style="margin-bottom: 2rem;">Champs de Formulaire Intelligents</h2>
+            
+            <div class="demo-grid">
+                <!-- Champs Blancs -->
+                <div class="intelligent-card" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Champs sur Fond Blanc</h3>
+                    <div class="demo-form">
+                        <div>
+                            <label class="intelligent-label-on-card">Nom complet</label>
+                            <input type="text" class="intelligent-field" placeholder="Entrez votre nom">
+                        </div>
+                        <div>
+                            <label class="intelligent-label-on-card">Email</label>
+                            <input type="email" class="intelligent-field" placeholder="votre@email.com">
+                        </div>
+                        <div>
+                            <label class="intelligent-label-on-card">Message</label>
+                            <textarea class="intelligent-field" rows="3" placeholder="Votre message..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Champs Colorés -->
+                <div class="intelligent-card" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Champs avec Couleurs Brand</h3>
+                    <div class="demo-form">
+                        <div>
+                            <label class="intelligent-label-brand">Champ Primaire (#4300FF)</label>
+                            <input type="text" class="intelligent-field-primary" placeholder="Texte blanc automatique">
+                        </div>
+                        <div>
+                            <label class="intelligent-label-brand">Champ Secondaire (#0065F8)</label>
+                            <input type="text" class="intelligent-field-secondary" placeholder="Texte blanc automatique">
+                        </div>
+                        <div>
+                            <label class="intelligent-label-brand">Champ Tertiaire (#00CAFF)</label>
+                            <input type="text" class="intelligent-field-tertiary" placeholder="Texte noir automatique">
+                        </div>
+                        <div>
+                            <label class="intelligent-label-brand">Champ Accent (#00FFDE)</label>
+                            <input type="text" class="intelligent-field-accent" placeholder="Texte noir automatique">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Métriques Intelligentes -->
+        <section class="demo-section">
+            <h2 class="intelligent-text-brand-tertiary" style="margin-bottom: 2rem;">Métriques Intelligentes</h2>
+            
+            <div class="demo-grid">
+                <div class="intelligent-metric-card intelligent-metric-card-primary">
+                    <div class="intelligent-metric-icon intelligent-metric-icon-primary">📊</div>
+                    <div class="intelligent-metric-number">1,234</div>
+                    <div class="intelligent-metric-label">Utilisateurs Actifs</div>
+                    <div style="font-size: 0.875rem; color: var(--emerald-green);">↗ +12% ce mois</div>
+                </div>
+
+                <div class="intelligent-metric-card intelligent-metric-card-secondary">
+                    <div class="intelligent-metric-icon intelligent-metric-icon-secondary">💰</div>
+                    <div class="intelligent-metric-number">€45,678</div>
+                    <div class="intelligent-metric-label">Revenus Mensuels</div>
+                    <div style="font-size: 0.875rem; color: var(--emerald-green);">↗ +8% ce mois</div>
+                </div>
+
+                <div class="intelligent-metric-card intelligent-metric-card-tertiary">
+                    <div class="intelligent-metric-icon intelligent-metric-icon-tertiary">🎯</div>
+                    <div class="intelligent-metric-number">98.5%</div>
+                    <div class="intelligent-metric-label">Satisfaction Client</div>
+                    <div style="font-size: 0.875rem; color: var(--emerald-green);">↗ +2% ce mois</div>
+                </div>
+
+                <div class="intelligent-metric-card intelligent-metric-card-accent">
+                    <div class="intelligent-metric-icon intelligent-metric-icon-accent">⚡</div>
+                    <div class="intelligent-metric-number">2.3s</div>
+                    <div class="intelligent-metric-label">Temps de Réponse</div>
+                    <div style="font-size: 0.875rem; color: var(--coral-red);">↗ +0.2s ce mois</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Alertes et Badges -->
+        <section class="demo-section">
+            <h2 class="intelligent-text-brand-accent" style="margin-bottom: 2rem;">Alertes et Badges Intelligents</h2>
+            
+            <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                <div class="intelligent-alert intelligent-alert-primary">
+                    <strong>Information Primaire:</strong> Système de couleurs intelligent activé avec succès.
+                </div>
+                <div class="intelligent-alert intelligent-alert-secondary">
+                    <strong>Information Secondaire:</strong> Adaptation automatique des contrastes en cours.
+                </div>
+                <div class="intelligent-alert intelligent-alert-success">
+                    <strong>Succès:</strong> Toutes les couleurs sont optimisées pour la lisibilité.
+                </div>
+                <div class="intelligent-alert intelligent-alert-warning">
+                    <strong>Attention:</strong> Vérifiez la compatibilité avec votre écran.
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <span class="intelligent-badge intelligent-badge-primary">Primaire</span>
+                <span class="intelligent-badge intelligent-badge-secondary">Secondaire</span>
+                <span class="intelligent-badge intelligent-badge-tertiary">Tertiaire</span>
+                <span class="intelligent-badge intelligent-badge-accent">Accent</span>
+                <span class="intelligent-badge intelligent-badge-success">Succès</span>
+                <span class="intelligent-badge intelligent-badge-warning">Attention</span>
+                <span class="intelligent-badge intelligent-badge-error">Erreur</span>
+            </div>
+        </section>
+
+        <!-- Section: Classes Utilitaires -->
+        <section class="demo-section">
+            <h2 style="margin-bottom: 2rem; color: var(--primary-color);">Classes Utilitaires Rapides</h2>
+            
+            <div class="demo-grid">
+                <div class="card-white" style="padding: 2rem; border-radius: 1rem;">
+                    <h3>Classe .card-white</h3>
+                    <p>Force la carte en blanc avec texte noir</p>
+                    <p class="text-primary">Texte coloré en primaire</p>
+                </div>
+
+                <div class="card-primary" style="padding: 2rem; border-radius: 1rem;">
+                    <h3>Classe .card-primary</h3>
+                    <p>Force la carte en violet avec texte blanc</p>
+                    <p class="text-accent">Texte forcé en accent</p>
+                </div>
+
+                <div class="card-tertiary" style="padding: 2rem; border-radius: 1rem;">
+                    <h3>Classe .card-tertiary</h3>
+                    <p>Force la carte en cyan avec texte noir</p>
+                    <p class="text-secondary">Texte forcé en secondaire</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--border-color);">
+            <p class="intelligent-text-muted">
+                Système Intelligent Professionnel - Adaptation automatique des couleurs
+            </p>
+            <p class="intelligent-text-secondary" style="margin-top: 0.5rem;">
+                Couleurs brand: 
+                <span class="text-primary">#4300FF</span> • 
+                <span class="text-secondary">#0065F8</span> • 
+                <span class="text-tertiary">#00CAFF</span> • 
+                <span class="text-accent">#00FFDE</span>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
